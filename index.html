@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Elite | Estilo e Tradição</title>
+
+    <style>
+        :root {
+            --dourado: #e8bd4a;
+            --fundo: #080f19;
+            --secundario: #172438;
+            --texto: #ffffff;
+            --cinza: #cbd5e1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--fundo);
+            color: var(--texto);
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--dourado);
+        }
+
+        header h1 {
+            font-size: 30px;
+        }
+
+        header span {
+            color: var(--dourado);
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        nav a:hover {
+            color: var(--dourado);
+        }
+
+        .hero {
+            min-height: 430px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 60px 8%;
+            background:
+                linear-gradient(90deg, rgba(5, 12, 20, .96), rgba(5, 12, 20, .45)),
+                url("imagens/barbearia.png.png") center/cover no-repeat;
+        }
+
+        .hero h2 {
+            font-size: clamp(34px, 5vw, 52px);
+            max-width: 600px;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 span {
+            color: var(--dourado);
+        }
+
+        .hero p {
+            max-width: 550px;
+            color: var(--cinza);
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .botao {
+            display: inline-block;
+            background: var(--dourado);
+            color: #111;
+            padding: 14px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .botao:hover {
+            background: #ffd66b;
+            transform: translateY(-2px);
+        }
+
+        .servicos {
+            padding: 55px 7%;
+            text-align: center;
+            background: var(--secundario);
+        }
+
+        .titulo {
+            color: var(--dourado);
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .descricao {
+            color: var(--cinza);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .servicos-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        .servico {
+            flex: 1 1 230px;
+            max-width: 330px;
+            padding: 30px 20px;
+            border: 1px solid #718096;
+            border-radius: 10px;
+            background: rgba(5, 12, 20, .5);
+        }
+
+        .servico h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .servico p {
+            color: var(--cinza);
+            line-height: 1.6;
+        }
+
+        .preco {
+            color: var(--dourado);
+            font-size: 23px;
+            font-weight: bold;
+            margin-top: 18px;
+        }
+
+        /* FEEDBACK DOS CLIENTES */
+
+        .feedback {
+            padding: 55px 7%;
+            text-align: center;
+        }
+
+        .feedback-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feedback-card {
+            flex: 1 1 250px;
+            max-width: 350px;
+            padding: 25px 20px;
+            background: linear-gradient(145deg, #111d2d, #080f19);
+            border: 1px solid #718096;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .estrelas {
+            color: var(--dourado);
+            font-size: 25px;
+            letter-spacing: 3px;
+            margin-bottom: 18px;
+        }
+
+        .comentario {
+            color: var(--cinza);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .cliente {
+            color: var(--dourado);
+            font-size: 16px;
+        }
+
+        .aviso {
+            color: #aebaca;
+            font-size: 12px;
+            margin-top: 18px;
+            margin-bottom: 25px;
+        }
+
+        /* CONTATO E RODAPÉ */
+
+        .contato {
+            padding: 35px 7%;
+            border-top: 1px solid #526174;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .contato h3 {
+            color: var(--dourado);
+            margin-bottom: 12px;
+        }
+
+        .contato p,
+        .contato a {
+            color: var(--cinza);
+            line-height: 1.8;
+        }
+
+        .contato a {
+            text-decoration: none;
+        }
+
+        .contato a:hover {
+            color: var(--dourado);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #526174;
+            color: var(--cinza);
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 25px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 50px 7%;
+                min-height: 380px;
+                background-position: center;
+            }
+
+            .titulo {
+                font-size: 27px;
+            }
+
+            .contato {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>BARBEARIA <span>ELITE</span></h1>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#feedback">Avaliações</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <h2>Seu estilo <span>começa aqui.</span></h2>
+
+        <p>
+            Cortes modernos, barba bem feita e um atendimento
+            de qualidade para você se sentir ainda mais confiante.
+        </p>
+
+        <a
+            class="botao"
+            href="https://wa.me/5527993090655?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio."
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Agende seu horário
+        </a>
+    </section>
+
+    <section class="servicos" id="servicos">
+        <h2 class="titulo">Nossos serviços</h2>
+
+        <p class="descricao">
+            Mais do que um corte, é um cuidado com você.
+        </p>
+
+        <div class="servicos-container">
+
+            <div class="servico">
+                <h3>Corte masculino</h3>
+                <p>Deixe seu estilo com a gente.</p>
+                <div class="preco">R$ 30,00</div>
+            </div>
+
+            <div class="servico">
+                <h3>Barba</h3>
+                <p>Barba alinhada e visual renovado.</p>
+                <div class="preco">R$ 20,00</div>
+            </div>
+
+            <div class="servico">
+                <h3>Corte + barba</h3>
+                <p>O combo ideal para o seu estilo.</p>
+                <div class="preco">R$ 45,00</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE FEEDBACK -->
+
+    <section class="feedback" id="feedback">
+        <h2 class="titulo">O que nossos clientes dizem</h2>
+
+        <p class="descricao">
+            Sua opinião é importante para nós!
+        </p>
+
+        <div class="feedback-container">
+
+            <div class="feedback-card">
+                <div class="estrelas">★★★★★</div>
+                <p class="comentario">
+                    Seja o primeiro a compartilhar sua experiência
+                    com a Barbearia Elite!
+                </p>
+                <h3 class="cliente">Sua avaliação aqui</h3>
+            </div>
+
+            <div class="feedback-card">
+                <div class="estrelas">★★★★★</div>
+                <p class="comentario">
+                    Conte como foi seu atendimento e ajude
+                    outros clientes a conhecer nossos serviços.
+                </p>
+                <h3 class="cliente">Sua opinião importa</h3>
+            </div>
+
+            <div class="feedback-card">
+                <div class="estrelas">★★★★★</div>
+                <p class="comentario">
+                    Estamos esperando seu comentário
+                    para melhorar cada vez mais!
+                </p>
+                <h3 class="cliente">Avalie nosso serviço</h3>
+            </div>
+
+        </div>
+
+        <a
+            class="botao"
+            href="https://wa.me/5527993090655?text=Ol%C3%A1!%20Gostaria%20de%20deixar%20uma%20avalia%C3%A7%C3%A3o%20sobre%20a%20Barbearia%20Elite."
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Deixe sua avaliação
+        </a>
+
+        <p class="aviso">
+            As avaliações serão adicionadas após o recebimento
+            dos comentários reais dos clientes.
+        </p>
+    </section>
+
+    <section class="contato" id="contato">
+
+        <div>
+            <h3>Barbearia Elite</h3>
+            <p>Estilo, qualidade e tradição.</p>
+        </div>
+
+        <div>
+            <h3>Endereço e horário</h3>
+            <p>
+                Rua Sete de Setembro, Centro<br>
+                Vitória - ES<br>
+                Segunda a sábado, das 08h às 17h
+            </p>
+        </div>
+
+        <div>
+            <h3>Instagram</h3>
+            <a
+                href="https://www.instagram.com/Barbearia_Elite/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                @Barbearia_Elite
+            </a>
+        </div>
+
+        <div>
+            <h3>WhatsApp</h3>
+            <a
+                href="https://wa.me/5527993090655"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                (27) 99309-0655
+            </a>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>
+            © 2026 Barbearia Elite. Todos os direitos reservados.
+        </p>
+    </footer>
+
+</body>
+</html>
